@@ -29,11 +29,5 @@ app.logger.addHandler(logstash_handler)
 def hello():
     return '<h1>Hello from Flask & Docker</h2>'
 
-print(LOGSTASH_HOST)
-print(LOGSTASH_DB_PATH)
-print(LOGSTASH_TRANSPORT)
-print(LOGSTASH_PORT)
-
-
 if __name__ == "__main__":
     app.run(debug=True)
