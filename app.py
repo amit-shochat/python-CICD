@@ -5,10 +5,15 @@ import os
 from logstash_async.handler import AsynchronousLogstashHandler
 from logstash_async.formatter import FlaskLogstashFormatter
 
-LOGSTASH_HOST = os.environ.get('LOGSTASH_HOST', None)
-LOGSTASH_DB_PATH = os.environ.get('LOGSTASH_DB_PATH', None)
-LOGSTASH_TRANSPORT = os.environ.get('LOGSTASH_TRANSPORT', None)
-LOGSTASH_PORT = os.environ.get('LOGSTASH_PORT', None)
+# LOGSTASH_HOST = os.environ.get('LOGSTASH_HOST', None)
+# LOGSTASH_DB_PATH = os.environ.get('LOGSTASH_DB_PATH', None)
+# LOGSTASH_TRANSPORT = os.environ.get('LOGSTASH_TRANSPORT', None)
+# LOGSTASH_PORT = os.environ.get('LOGSTASH_PORT', None)
+
+LOGSTASH_HOST="192.168.122.29"
+LOGSTASH_DB_PATH="/python-app"
+LOGSTASH_TRANSPORT="logstash_async.transport.BeatsTransport"
+LOGSTASH_PORT="5044"
 
 logstash_handler = AsynchronousLogstashHandler(
     LOGSTASH_HOST,
