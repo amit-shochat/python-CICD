@@ -11,11 +11,12 @@ LOGSTASH_HOST = os.environ.get('LOGSTASH_HOST', None)
 LOGSTASH_DB_PATH = os.environ.get('LOGSTASH_DB_PATH', None)
 LOGSTASH_TRANSPORT = os.environ.get('LOGSTASH_TRANSPORT', None)
 LOGSTASH_PORT = os.environ.get('LOGSTASH_PORT', None)
+PORT = int(LOGSTASH_PORT)
 
 logger = logging.getLogger("Flask & Docker & Logstah ( Fuck that shit)")
 logger.setLevel(logging.INFO)
 logger.formatter = FlaskLogstashFormatter(metadata={"amit": "flask-app"})
-logger.addHandler(AsynchronousLogstashHandler(LOGSTASH_HOST, int(LOGSTASH_PORT), LOGSTASH_DB_PATH, LOGSTASH_TRANSPORT))
+logger.addHandler(AsynchronousLogstashHandler(LOGSTASH_HOST, PORT, LOGSTASH_DB_PATH, LOGSTASH_TRANSPORT))
 
 
 @app.route('/')
@@ -23,5 +24,5 @@ def home():
     logger.info("Hello from Flask & Docker & Logstah")
     return '<h1>Hello from Flask & Docker & Logstah</h1>'
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
