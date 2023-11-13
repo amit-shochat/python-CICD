@@ -6,7 +6,7 @@ ENV LOGSTASH_HOST="192.168.200.19"
 ENV LOGSTASH_DB_PATH="/python-app"
 ENV LOGSTASH_TRANSPORT="logstash_async.transport.BeatsTransport"
 ENV LOGSTASH_PORT="5044"
-
+ENV FLASK_APP="./app.py"
 # Working DIR 
 WORKDIR /python-app
 
