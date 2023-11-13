@@ -21,5 +21,6 @@ logger.addHandler(AsynchronousLogstashHandler(LOGSTASH_HOST, LOGSTASH_PORT, LOGS
 def home():
     logger.info("Hello from Flask & Docker & Logstah")
     return '<h1>Hello from Flask & Docker & Logstah</h1>'
-if __name__ == "__main__":
-    app.run(debug=True)
+
+# if __name__ == "__main__":
+#     app.run(debug=True)
